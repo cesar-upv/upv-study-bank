@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "prng": "mulberry32",
+  "seed_type": "uint32",
+  "row_order": "false_first_lexicographic",
+  "max_rejections": 100,
+  "levels": {
+    "basic": {
+      "max_variables": 2,
+      "max_depth": 2,
+      "operators": [
+        "not",
+        "and",
+        "or",
+        "implies"
+      ]
+    },
+    "intermediate": {
+      "max_variables": 3,
+      "max_depth": 3,
+      "operators": [
+        "not",
+        "and",
+        "or",
+        "xor",
+        "implies",
+        "iff"
+      ]
+    },
+    "advanced": {
+      "max_variables": 4,
+      "max_depth": 4,
+      "operators": [
+        "not",
+        "and",
+        "or",
+        "xor",
+        "implies",
+        "iff"
+      ]
+    }
+  },
+  "generators": [
+    {
+      "id": "truth-table-v1",
+      "version": 1,
+      "type": "truth_table",
+      "strategy": "bounded_ast"
+    },
+    {
+      "id": "equivalence-v1",
+      "version": 1,
+      "type": "equivalence",
+      "strategy": "validated_rewrite_or_counterexample",
+      "positive_laws": [
+        "double_negation",
+        "de_morgan",
+        "implication",
+        "contraposition",
+        "absorption"
+      ]
+    },
+    {
+      "id": "sat-v1",
+      "version": 1,
+      "type": "sat",
+      "strategy": "target_class_rejection",
+      "target_classes": [
+        "satisfiable",
+        "unsatisfiable"
+      ]
+    },
+    {
+      "id": "translation-v1",
+      "version": 1,
+      "type": "translation",
+      "strategy": "reviewed_language_templates",
+      "template_ids": [
+        "sentence-only-if",
+        "sentence-if",
+        "sentence-sufficient",
+        "sentence-necessary",
+        "sentence-not-and",
+        "sentence-xor"
+      ]
+    }
+  ],
+  "language_templates": [
+    {
+      "id": "sentence-only-if",
+      "bindings": {
+        "p": "envío el trabajo",
+        "q": "tengo conexión"
+      },
+      "prompt": "Envío el trabajo solo si tengo conexión.",
+      "formula": "(p -> q)"
+    },
+    {
+      "id": "sentence-if",
+      "bindings": {
+        "p": "envío el trabajo",
+        "q": "tengo conexión"
+      },
+      "prompt": "Envío el trabajo si tengo conexión.",
+      "formula": "(q -> p)"
+    },
+    {
+      "id": "sentence-sufficient",
+      "bindings": {
+        "p": "envío el trabajo",
+        "q": "tengo conexión"
+      },
+      "prompt": "Tener conexión es suficiente para enviar el trabajo.",
+      "formula": "(q -> p)"
+    },
+    {
+      "id": "sentence-necessary",
+      "bindings": {
+        "p": "envío el trabajo",
+        "q": "tengo conexión"
+      },
+      "prompt": "Tener conexión es necesario para enviar el trabajo.",
+      "formula": "(p -> q)"
+    },
+    {
+      "id": "sentence-not-and",
+      "bindings": {
+        "p": "envío el trabajo",
+        "q": "tengo conexión"
+      },
+      "prompt": "No es cierto que envíe el trabajo y tenga conexión.",
+      "formula": "(not (p and q))"
+    },
+    {
+      "id": "sentence-xor",
+      "bindings": {
+        "p": "envío el trabajo",
+        "q": "tengo conexión"
+      },
+      "prompt": "Envío el trabajo o tengo conexión, pero no ambas.",
+      "formula": "(p xor q)"
+    }
+  ],
+  "context_sets": [
+    {
+      "p": "envío el trabajo",
+      "q": "tengo conexión",
+      "templates": [
+        "sentence-only-if",
+        "sentence-if",
+        "sentence-sufficient",
+        "sentence-necessary",
+        "sentence-not-and",
+        "sentence-xor"
+      ]
+    },
+    {
+      "p": "abro la puerta",
+      "q": "tengo la llave",
+      "templates": [
+        "sentence-only-if",
+        "sentence-if",
+        "sentence-sufficient",
+        "sentence-necessary",
+        "sentence-not-and",
+        "sentence-xor"
+      ]
+    },
+    {
+      "p": "activo la alarma",
+      "q": "detecto humo",
+      "templates": [
+        "sentence-only-if",
+        "sentence-if",
+        "sentence-sufficient",
+        "sentence-necessary",
+        "sentence-not-and",
+        "sentence-xor"
+      ]
+    }
+  ],
+  "note": "Al cambiar contexto, sustituir cláusulas completas con conjugaciones revisadas; no hacer reemplazo ciego de strings. Validar cualquier candidata con el motor. Identificar fallback y conservar el snapshot generado."
+}

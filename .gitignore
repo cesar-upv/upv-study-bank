@@ -1,0 +1,77 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Production builds
+dist/
+dist-ssr/
+*.local
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and OS files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Tests & coverage
+.cache/
+coverage/
+playwright-report/
+test-results/
+blob-report/
+
+# TypeScript build info
+*.tsbuildinfo
+vite.config.ts.timestamp-*
+
+# Agent and AI assistant metadata
+.agent/
+.agents/
+.gemini/
+.impeccable/
+
+# Local study material and authoring sources (never commit personal courses)
+/content/*
+!/content/unit-package.schema.json
+/local/
+/docs/subjects/
+/docs/evidence/
+
+# Local agent context and one-off reports
+/PRODUCT.md
+/DESIGN.md
+/docs/*.md
+!/docs/AUTHORING-PROMPT.md
+!/docs/CONTENT.md
+/tools/build_views.py
+/tools/validate_content.py
+/tools/verify_vectors.py
+/tools/build_unit_package.py
+/reference/
+
+

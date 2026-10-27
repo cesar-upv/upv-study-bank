@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "kind": "unit-package",
+  "subject": {
+    "id": "materia-ejemplo",
+    "title": "Materia de ejemplo",
+    "description": "Paquete mínimo para verificar extensibilidad; no forma parte del examen de IA.",
+    "unit_ids": [
+      "unidad-01"
+    ]
+  },
+  "unit": {
+    "schema_version": 1,
+    "id": "unidad-01",
+    "subject_id": "materia-ejemplo",
+    "title": "Unidad 1",
+    "revision": 1,
+    "topic_ids": [
+      "lectura"
+    ],
+    "lessons": [
+      "leccion-01.md"
+    ],
+    "questions": "questions.json",
+    "answers": "answers.json"
+  },
+  "lessons": [
+    {
+      "path": "leccion-01.md",
+      "markdown": "---\nschema_version: 1\nid: ejemplo-u01-lectura\nsubject_id: materia-ejemplo\nunit_id: unidad-01\ntopic_id: lectura\ntitle: Lectura de una guía\norder: 1\nexam_scope: optional\nsource_ids: [ejemplo-original]\n---\n\n# Lectura de una guía\n\n## Objetivo\nDistinguir una guía de estudio de una respuesta a un ejercicio.\n\n## Conceptos indispensables\nUna guía desarrolla conceptos y ejemplos. Una solución explica cómo resolver un problema concreto.\n\n## Ejemplo resuelto\nUn texto que define conceptos antes de practicarlos cumple la función de guía.\n\n## Errores frecuentes\nLeer sin comprobar la comprensión mediante ejercicios.\n\n## Comprueba tu dominio\nExplica con tus palabras qué ayuda ofrece una guía.\n"
+    }
+  ],
+  "questions": [
+    {
+      "schema_version": 1,
+      "id": "ejemplo-u01-single_choice-001",
+      "subject_id": "materia-ejemplo",
+      "unit_id": "unidad-01",
+      "topic_id": "lectura",
+      "type": "single_choice",
+      "difficulty": "basic",
+      "exam_scope": "optional",
+      "prompt": "¿Cuál es la función principal de una guía de estudio?",
+      "payload": {
+        "options": [
+          {
+            "id": "a",
+            "text": "Desarrollar conceptos y ejemplos"
+          },
+          {
+            "id": "b",
+            "text": "Registrar solo errores de software"
+          },
+          {
+            "id": "c",
+            "text": "Sustituir toda práctica"
+          },
+          {
+            "id": "d",
+            "text": "Ocultar el temario"
+          }
+        ]
+      },
+      "hints": [],
+      "source_ids": [
+        "ejemplo-original"
+      ]
+    }
+  ],
+  "answers": [
+    {
+      "question_id": "ejemplo-u01-single_choice-001",
+      "solution": {
+        "correct_option_id": "a"
+      },
+      "explanation": "La guía explica conceptos y los conecta con ejemplos para preparar la práctica."
+    }
+  ],
+  "sources": [
+    {
+      "id": "ejemplo-original",
+      "title": "Material original de prueba",
+      "kind": "original"
+    }
+  ]
+}

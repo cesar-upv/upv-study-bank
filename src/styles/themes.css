@@ -1,0 +1,245 @@
+/* Semantic palette tokens shared by application components. */
+:root, [data-palette='flexoki'][data-theme='light'] {
+  color-scheme: light;
+  --bg-primary: #FFFCF0;
+  --bg-surface: #FFFCF0;
+  --bg-surface-elevated: #F2F0E5;
+  --bg-surface-hover: #E6E4D9;
+  --text-primary: #100F0F;
+  --text-secondary: #575653;
+  --text-muted: #575653;
+  --border-color: #B7B5AC;
+  --border-subtle: #E6E4D9;
+  --accent-primary: #536907;
+  --accent-primary-hover: #3D4C07;
+  --accent-text: #FFFCF0;
+  --success-text: #536907;
+  --error-text: #AF3029;
+  --warning-text: #664D01;
+  --info-text: #205EA6;
+  --syntax-keyword: #5E409D;
+  --syntax-string: #536907;
+  --syntax-number: #AF3029;
+  --syntax-title: #205EA6;
+  --syntax-meta: #1C6C66;
+}
+
+[data-palette='flexoki'][data-theme='dark'] {
+  color-scheme: dark;
+  --bg-primary: #100F0F;
+  --bg-surface: #1C1B1A;
+  --bg-surface-elevated: #282726;
+  --bg-surface-hover: #343331;
+  --text-primary: #CECDC3;
+  --text-secondary: #B7B5AC;
+  --text-muted: #9F9D96;
+  --border-color: #575653;
+  --border-subtle: #343331;
+  --accent-primary: #A0AF54;
+  --accent-primary-hover: #BEC97E;
+  --accent-text: #100F0F;
+  --success-text: #A0AF54;
+  --error-text: #E8705F;
+  --warning-text: #DFB431;
+  --info-text: #66A0C8;
+  --syntax-keyword: #A699D0;
+  --syntax-string: #A0AF54;
+  --syntax-number: #E8705F;
+  --syntax-title: #66A0C8;
+  --syntax-meta: #5ABDAC;
+}
+
+[data-palette='zinc'][data-theme='light'] {
+  color-scheme: light;
+  --bg-primary: #FAFAFA;
+  --bg-surface: #FFFFFF;
+  --bg-surface-elevated: #F4F4F5;
+  --bg-surface-hover: #E4E4E7;
+  --text-primary: #18181B;
+  --text-secondary: #3F3F46;
+  --text-muted: #52525B;
+  --border-color: #A1A1AA;
+  --border-subtle: #E4E4E7;
+  --accent-primary: #27272A;
+  --accent-primary-hover: #3F3F46;
+  --accent-text: #FAFAFA;
+  --success-text: #166534;
+  --error-text: #B91C1C;
+  --warning-text: #854D0E;
+  --info-text: #1E40AF;
+  --syntax-keyword: #6B21A8;
+  --syntax-string: #166534;
+  --syntax-number: #B91C1C;
+  --syntax-title: #1E40AF;
+  --syntax-meta: #155E75;
+}
+
+[data-palette='zinc'][data-theme='dark'] {
+  color-scheme: dark;
+  --bg-primary: #09090B;
+  --bg-surface: #18181B;
+  --bg-surface-elevated: #27272A;
+  --bg-surface-hover: #3F3F46;
+  --text-primary: #FAFAFA;
+  --text-secondary: #D4D4D8;
+  --text-muted: #A1A1AA;
+  --border-color: #71717A;
+  --border-subtle: #3F3F46;
+  --accent-primary: #E4E4E7;
+  --accent-primary-hover: #FAFAFA;
+  --accent-text: #18181B;
+  --success-text: #86EFAC;
+  --error-text: #FCA5A5;
+  --warning-text: #FDE047;
+  --info-text: #93C5FD;
+  --syntax-keyword: #D8B4FE;
+  --syntax-string: #86EFAC;
+  --syntax-number: #FCA5A5;
+  --syntax-title: #93C5FD;
+  --syntax-meta: #67E8F9;
+}
+
+[data-palette='catppuccin'][data-theme='light'] {
+  color-scheme: light;
+  --code-bg: var(--bg-surface);
+  --error-bg: var(--bg-surface);
+  --bg-primary: #EFF1F5;
+  --bg-surface: #EFF1F5;
+  --bg-surface-elevated: #E6E9EF;
+  --bg-surface-hover: #DCE0E8;
+  --text-primary: #4C4F69;
+  --text-secondary: #5C5F77;
+  --text-muted: #5C5F77;
+  --border-color: #8C8FA1;
+  --border-subtle: #CCD0DA;
+  --accent-primary: #8839EF;
+  --accent-primary-hover: #4C4F69;
+  --accent-text: #EFF1F5;
+  --success-text: #4C4F69;
+  --error-text: #D20F39;
+  --warning-text: #4C4F69;
+  --info-text: #4C4F69;
+  --syntax-keyword: #8839EF;
+  --syntax-string: #4C4F69;
+  --syntax-number: #D20F39;
+  --syntax-title: #4C4F69;
+  --syntax-meta: #4C4F69;
+}
+
+[data-palette='catppuccin'][data-theme='dark'] {
+  color-scheme: dark;
+  --bg-primary: #1E1E2E;
+  --bg-surface: #181825;
+  --bg-surface-elevated: #313244;
+  --bg-surface-hover: #45475A;
+  --text-primary: #CDD6F4;
+  --text-secondary: #BAC2DE;
+  --text-muted: #A6ADC8;
+  --border-color: #7F849C;
+  --border-subtle: #45475A;
+  --accent-primary: #CBA6F7;
+  --accent-primary-hover: #B4BEFE;
+  --accent-text: #1E1E2E;
+  --success-text: #A6E3A1;
+  --error-text: #F38BA8;
+  --warning-text: #F9E2AF;
+  --info-text: #89B4FA;
+  --syntax-keyword: #CBA6F7;
+  --syntax-string: #A6E3A1;
+  --syntax-number: #F38BA8;
+  --syntax-title: #89B4FA;
+  --syntax-meta: #94E2D5;
+}
+
+[data-palette='academic'][data-theme='light'] {
+  color-scheme: light;
+  --bg-primary: #f5f3ed;
+  --bg-surface: #fffefa;
+  --bg-surface-elevated: #eeede5;
+  --bg-surface-hover: #e6e8df;
+  --text-primary: #252c28;
+  --text-secondary: #4d5951;
+  --text-muted: #626b61;
+  --border-color: #a5ad9e;
+  --border-subtle: #dedfd5;
+  --accent-primary: #285b43;
+  --accent-primary-hover: #19432f;
+  --accent-text: #ffffff;
+  --success-text: #065f46;
+  --error-text: #991b1b;
+  --warning-text: #92400e;
+  --info-text: #2e533d;
+  --syntax-keyword: #5e409d;
+  --syntax-string: #065f46;
+  --syntax-number: #991b1b;
+  --syntax-title: #2e533d;
+  --syntax-meta: #1c6c66;
+  --rail-bg: #203e31;
+  --rail-text: #f4f3e8;
+  --rail-muted: #c2d0c1;
+}
+
+[data-palette='academic'][data-theme='dark'] {
+  color-scheme: dark;
+  --bg-primary: #19211d;
+  --bg-surface: #222c25;
+  --bg-surface-elevated: #2b372e;
+  --bg-surface-hover: #344438;
+  --text-primary: #eeeee4;
+  --text-secondary: #c9d0c2;
+  --text-muted: #acb8a6;
+  --border-color: #748571;
+  --border-subtle: #3d4c3f;
+  --accent-primary: #b9d5a7;
+  --accent-primary-hover: #d0e5c3;
+  --accent-text: #203420;
+  --success-text: #a7f3d0;
+  --error-text: #fecaca;
+  --warning-text: #fde68a;
+  --info-text: #d1e3c5;
+  --syntax-keyword: #c4b9e0;
+  --syntax-string: #a7f3d0;
+  --syntax-number: #fecaca;
+  --syntax-title: #d1e3c5;
+  --syntax-meta: #87d3c3;
+  --rail-bg: #142c21;
+  --rail-text: #f4f3e8;
+  --rail-muted: #c2d0c1;
+}
+
+/* Shared derived roles keep code, charts, diagrams and controls in sync. */
+:root {
+  --border-focus: var(--accent-primary);
+  --control-border: var(--text-muted);
+  --rail-bg: var(--bg-surface-elevated);
+  --rail-text: var(--text-primary);
+  --rail-muted: var(--text-secondary);
+  --rail-hover: color-mix(in srgb, var(--rail-text) 8%, var(--rail-bg));
+  --rail-active: color-mix(in srgb, var(--rail-text) 14%, var(--rail-bg));
+  --rail-border: color-mix(in srgb, var(--rail-text) 35%, var(--rail-bg));
+  --selection-bg: color-mix(in srgb, var(--accent-primary) 22%, var(--bg-surface));
+  --success-bg: color-mix(in srgb, var(--success-text) 8%, var(--bg-surface));
+  --error-bg: color-mix(in srgb, var(--error-text) 8%, var(--bg-surface));
+  --warning-bg: color-mix(in srgb, var(--warning-text) 8%, var(--bg-surface));
+  --info-bg: color-mix(in srgb, var(--info-text) 8%, var(--bg-surface));
+  --success-border: var(--success-text);
+  --error-border: var(--error-text);
+  --warning-border: var(--warning-text);
+  --info-border: var(--info-text);
+  --code-bg: var(--bg-surface-elevated);
+  --code-text: var(--text-primary);
+  --syntax-comment: var(--text-muted);
+  --chart-1: var(--accent-primary);
+  --chart-2: var(--info-text);
+  --chart-3: var(--warning-text);
+  --chart-4: var(--syntax-keyword);
+  --chart-5: var(--error-text);
+  --spine-bg: var(--info-bg);
+  --spine-text: var(--info-text);
+  --spine-border: var(--border-color);
+  --shadow-xs: none;
+  --shadow-sm: none;
+  --shadow-md: 0 4px 16px color-mix(in srgb, var(--text-primary) 8%, transparent);
+  --shadow-lg: var(--shadow-md);
+  --overlay-bg: rgb(0 0 0 / 50%);
+}

@@ -1,0 +1,44 @@
+import { test, expect } from './fixtures';
+const base = '/#/subjects/pruebas/units/guia';
+test('backup restores reading, favorites and an active exam after clearing progress', async ({ page }) => {
+  await page.goto(`${base}/study/tema-1`);
+  await page.getByRole('button', { name: 'Marcar como leído', exact: true }).click();
+  await page.getByRole('button', { name: 'Añadir a favoritos' }).click();
+  await page.goto(`${base}/exam`);
+  await page.getByRole('button', { name: 'Iniciar Simulacro de Examen' }).click();
+  await expect(page.getByRole('heading', { name: 'Simulacro (1/30)' })).toBeVisible();
+  await page.goto('/#/backup');
+  const downloadPromise = page.waitForEvent('download');
+  await page.getByRole('button', { name: 'Descargar archivo de respaldo JSON' }).click();
+  const download = await downloadPromise;
+  const file = await download.path();
+  await page.getByRole('button', { name: 'Borrar mi progreso' }).click();
+  await page.getByRole('alertdialog', { name: '¿Borrar tu progreso?' }).getByRole('button', { name: 'Borrar progreso', exact: true }).click();
+  await expect(page.getByRole('status')).toContainText('reiniciadas');
+  await page.locator('input[type=file]').setInputFiles(file!);
+  await expect(page.getByRole('status')).toContainText('restaurado');
+  await page.goto(`${base}/study/tema-1`);
+  await expect(page.getByRole('button', { name: 'Leído', exact: true })).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.getByRole('button', { name: 'Quitar de favoritos' })).toHaveAttribute('aria-pressed', 'true');
+  await page.goto(`${base}/exam`);
+  await expect(page.getByRole('heading', { name: 'Simulacro (1/30)' })).toBeVisible();
+});
+test('rejects an invalid backup visibly and preserves existing progress', async ({ page }) => {
+  await page.goto(`${base}/study/tema-1`);
+  await page.getByRole('button', { name: 'Marcar como leído', exact: true }).click();
+  await page.goto('/#/backup');
+  await page.locator('input[type=file]').setInputFiles({ name: 'bad.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify({ schema_version: 1, kind: 'study-bank-backup', lessonProgress: [{ id: 'bad' }] })) });
+  await expect(page.getByRole('alert')).toContainText('Fallo al importar');
+  await page.goto(`${base}/study/tema-1`);
+  await expect(page.getByRole('button', { name: 'Leído', exact: true })).toHaveAttribute('aria-pressed', 'true');
+});
+test('automatically submits and persists results when the timer expires', async ({ page }) => {
+  await page.clock.install();
+  await page.goto(`${base}/exam`);
+  await page.getByRole('button', { name: 'Iniciar Simulacro de Examen' }).click();
+  await expect(page.getByRole('heading', { name: 'Simulacro (1/30)' })).toBeVisible();
+  await page.clock.fastForward(46 * 60 * 1000);
+  await expect(page.getByRole('heading', { name: 'Resultados del Simulacro' })).toBeVisible();
+  await page.reload();
+  await expect(page.getByRole('heading', { name: 'Resultados del Simulacro' })).toBeVisible();
+});

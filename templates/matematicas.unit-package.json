@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "kind": "unit-package",
+  "subject": {
+    "id": "fundamentos-matematicos",
+    "title": "Fundamentos matemáticos",
+    "description": "Unidad de ejemplo: conjuntos y razonamiento. Sirve como referencia para crear tus propias materias.",
+    "unit_ids": [
+      "conceptos-basicos"
+    ]
+  },
+  "unit": {
+    "schema_version": 1,
+    "id": "conceptos-basicos",
+    "subject_id": "fundamentos-matematicos",
+    "title": "Conjuntos y razonamiento",
+    "revision": 1,
+    "topic_ids": [
+      "conjuntos"
+    ],
+    "lessons": [
+      "lessons/01-conjuntos.md"
+    ],
+    "questions": "questions.json",
+    "answers": "answers.json",
+    "exam": {
+      "question_count": 4,
+      "duration_minutes": 10
+    }
+  },
+  "lessons": [
+    {
+      "path": "lessons/01-conjuntos.md",
+      "markdown": "---\nschema_version: 1\nid: conjuntos-intro\nsubject_id: fundamentos-matematicos\nunit_id: conceptos-basicos\ntopic_id: conjuntos\ntitle: Conjuntos y operaciones\norder: 1\nexam_scope: required\nsource_ids: []\n---\n\n# Conjuntos y operaciones\n\nEsta unidad breve es un **ejemplo de autoría**, no un temario completo de la materia.\n\nUn conjunto reúne elementos. Si $A=\\{1,2\\}$ y $B=\\{2,3\\}$, entonces:\n\n- La unión $A \\cup B=\\{1,2,3\\}$ reúne los elementos de ambos.\n- La intersección $A \\cap B=\\{2\\}$ contiene los comunes.\n- La diferencia $A \\setminus B=\\{1\\}$ contiene los que están en $A$ y no en $B$.\n\nPara resolver una expresión, identifica los conjuntos, aplica las operaciones y comprueba el resultado.\n"
+    }
+  ],
+  "questions": [
+    {
+      "schema_version": 1,
+      "id": "conjuntos-single_choice-001",
+      "subject_id": "fundamentos-matematicos",
+      "unit_id": "conceptos-basicos",
+      "topic_id": "conjuntos",
+      "type": "single_choice",
+      "difficulty": "basic",
+      "exam_scope": "required",
+      "prompt": "¿Cuál es la intersección de $A=\\{1,2\\}$ y $B=\\{2,3\\}$?",
+      "payload": {
+        "options": [
+          {
+            "id": "union",
+            "text": "$\\{1,2,3\\}$"
+          },
+          {
+            "id": "comun",
+            "text": "$\\{2\\}$"
+          }
+        ]
+      },
+      "hints": [],
+      "source_ids": []
+    },
+    {
+      "schema_version": 1,
+      "id": "conjuntos-multiple_choice-001",
+      "subject_id": "fundamentos-matematicos",
+      "unit_id": "conceptos-basicos",
+      "topic_id": "conjuntos",
+      "type": "multiple_choice",
+      "difficulty": "basic",
+      "exam_scope": "required",
+      "prompt": "Selecciona los conjuntos que son subconjuntos de $A=\\{1,2,3\\}$.",
+      "payload": {
+        "options": [
+          {
+            "id": "a",
+            "text": "$\\{1,2\\}$"
+          },
+          {
+            "id": "b",
+            "text": "$\\{3,4\\}$"
+          },
+          {
+            "id": "c",
+            "text": "$\\varnothing$"
+          }
+        ]
+      },
+      "hints": [],
+      "source_ids": []
+    },
+    {
+      "schema_version": 1,
+      "id": "conjuntos-matching-001",
+      "subject_id": "fundamentos-matematicos",
+      "unit_id": "conceptos-basicos",
+      "topic_id": "conjuntos",
+      "type": "matching",
+      "difficulty": "basic",
+      "exam_scope": "required",
+      "prompt": "Relaciona cada operación con su significado.",
+      "payload": {
+        "left": [
+          {
+            "id": "union",
+            "text": "Unión"
+          },
+          {
+            "id": "inter",
+            "text": "Intersección"
+          },
+          {
+            "id": "diff",
+            "text": "Diferencia A menos B"
+          }
+        ],
+        "right": [
+          {
+            "id": "comunes",
+            "text": "Elementos comunes a ambos conjuntos"
+          },
+          {
+            "id": "solo-a",
+            "text": "Elementos de A que no pertenecen a B"
+          },
+          {
+            "id": "todos",
+            "text": "Elementos que pertenecen a A o a B"
+          }
+        ]
+      },
+      "hints": [],
+      "source_ids": []
+    },
+    {
+      "schema_version": 1,
+      "id": "conjuntos-ordering-001",
+      "subject_id": "fundamentos-matematicos",
+      "unit_id": "conceptos-basicos",
+      "topic_id": "conjuntos",
+      "type": "ordering",
+      "difficulty": "basic",
+      "exam_scope": "required",
+      "prompt": "Ordena estos conjuntos por inclusión, del menor al mayor.",
+      "payload": {
+        "items": [
+          {
+            "id": "grande",
+            "text": "{1, 2, 3}"
+          },
+          {
+            "id": "vacio",
+            "text": "Conjunto vacío"
+          },
+          {
+            "id": "medio",
+            "text": "{1, 2}"
+          },
+          {
+            "id": "uno",
+            "text": "{1}"
+          }
+        ]
+      },
+      "hints": [],
+      "source_ids": []
+    }
+  ],
+  "answers": [
+    {
+      "question_id": "conjuntos-single_choice-001",
+      "solution": {
+        "correct_option_id": "comun"
+      },
+      "explanation": "La intersección contiene únicamente los elementos comunes a ambos conjuntos."
+    },
+    {
+      "question_id": "conjuntos-multiple_choice-001",
+      "solution": {
+        "correct_option_ids": [
+          "a",
+          "c"
+        ]
+      },
+      "explanation": "Todos los elementos del subconjunto deben pertenecer a A. El conjunto vacío es subconjunto de todo conjunto."
+    },
+    {
+      "question_id": "conjuntos-matching-001",
+      "solution": {
+        "pairs": {
+          "union": "todos",
+          "inter": "comunes",
+          "diff": "solo-a"
+        }
+      },
+      "explanation": "La unión reúne; la intersección toma los elementos comunes; la diferencia excluye los de B."
+    },
+    {
+      "question_id": "conjuntos-ordering-001",
+      "solution": {
+        "ordered_ids": [
+          "vacio",
+          "uno",
+          "medio",
+          "grande"
+        ]
+      },
+      "explanation": "Cada conjunto del orden es subconjunto del siguiente."
+    }
+  ],
+  "sources": []
+}
